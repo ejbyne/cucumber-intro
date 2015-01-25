@@ -1,13 +1,11 @@
-require 'sinatra'
+require 'sinatra/base'
 
 class Battleships < Sinatra::Base
 
-  get '/' do # can render into html
-    "<h1>hello world</h1> <p>this is an awesome website</p>"
-
+  get '/' do
     @time = Time.new
     erb :sinatra_demo
-
   end
 
+  run! if app_file == $0
 end
